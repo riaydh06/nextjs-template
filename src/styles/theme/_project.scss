@@ -1,0 +1,96 @@
+$dark-indigo: #0b263d;
+$green-dark: #34808d;
+$teal: #53bfd4;
+$teal-light: #53bed2;
+$green-20: #c2d8dc;
+$green-10: #eaf2f3;
+$pink: #8f4e9e;
+$pink-light: #f27b9e;
+$pale-red: #e74c3c;
+$blue-green: #16a085;
+$golden-rod: #f1c40f;
+$white: #ffffff;
+
+$primary: $pink !default;
+$secondary: $teal !default;
+$dark: $dark-indigo !default;
+$info: $green-dark !default;
+$light: $green-10 !default;
+$danger: $pale-red !default;
+$success: $blue-green !default;
+$warning: $golden-rod !default;
+
+$body-color: $dark !default;
+$link-color: $info !default;
+
+// Typography
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-serif: 'Baskervville', serif;
+
+$text-muted: #4f4f4f;
+
+$font-size-base: 1.125rem !default;
+
+$headings-font-family: $font-family-serif !default;
+$headings-font-weight: normal !default;
+
+$lead-font-size: $font-size-base * 1.28 !default;
+
+// button
+$btn-font-size: 1.3rem !default;
+$btn-border-radius: 0.625rem !default;
+$btn-border-radius-lg: $btn-border-radius !default;
+$btn-border-radius-sm: $btn-border-radius !default;
+$btn-padding-y: 0.84rem !default;
+
+$btn-padding-y-sm: $btn-padding-y / 2 !default;
+
+$btn-padding-y-lg: $btn-padding-y !default;
+
+// inputs
+$input-border-radius: 1.25rem !default;
+
+$input-bg: rgba($dark, 0.1) !default;
+$input-placeholder-color: rgba($dark, 0.6) !default;
+$input-color: $dark !default;
+
+$input-border-width: 0 !default;
+$input-padding-x: 1.5rem !default;
+
+$input-btn-focus-width: 0 !default;
+
+$input-font-size-sm: $font-size-base !default;
+$input-border-radius-sm: $input-border-radius !default;
+$input-padding-y-sm: 0.9rem !default;
+$input-padding-x-sm: 1.5rem !default;
+
+$custom-control-indicator-checked-color: black !default;
+$custom-control-indicator-checked-bg: white !default;
+$custom-control-indicator-size: 1.125rem !default;
+$custom-control-indicator-bg: white !default;
+
+$hr-border-color: rgba($dark, 0.3) !default;
+$hr-border-width: 2px !default;
+
+// pagination
+$pagination-bg: rgba($primary, 0.6) !default;
+$pagination-color: white !default;
+$pagination-padding-y: 1.5rem !default;
+$pagination-padding-x: 1rem !default;
+$pagination-hover-bg: $primary !default;
+$pagination-hover-color: $pagination-color !default;
+
+// Modal
+$modal-content-border-width: 0;
+
+// navbar
+$navbar-dark-color: $green-dark;
+$navbar-dark-toggler-border-color: $green-dark;
+$navbar-dark-hover-color: $green-dark;
+
+$navbar-light-color: $white;
+$navbar-light-hover-color: $white;
+
+$navbar-toggler-border-radius: 9px !default;
+$navbar-toggler-padding-y: 6.2px !default;
+$navbar-toggler-padding-x: 6.2px !default;

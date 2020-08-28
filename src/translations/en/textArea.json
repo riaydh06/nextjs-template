@@ -1,0 +1,5 @@
+{
+  "TEXT_AREA_TEXT": "Maximum {{max}} characters",
+  "TEXT_AREA_TEXT_REMAIN": "Maximum {{max}} characters ({{remain}} remaining)",
+  "TEXT_AREA_LENGTH_ERROR": "Maximum {{max}} characters ({{over}} too many)"
+}

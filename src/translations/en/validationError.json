@@ -1,0 +1,8 @@
+{
+  "REQUIRED": "Sorry! You must fill out this field",
+  "REQUIRED_FIRST_NAME": "Please enter your first name",
+  "REQUIRED_LAST_NAME": "Please enter your last name",
+  "EMAIL": "Please enter a valid email address, for example “Janedoe@email.com”",
+  "REQUIRED_EMAIL": "Please enter a valid email address, for example “Janedoe@email.com”",
+  "NAME": "Please enter a valid name"
+}

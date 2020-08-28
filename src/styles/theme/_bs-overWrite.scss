@@ -1,0 +1,71 @@
+.btn {
+  @extend .btn-block;
+  &-lg {
+    height: 60px;
+    @include media-breakpoint-down(md) {
+      height: 80px;
+    }
+  }
+  &-light {
+    @extend .text-dark;
+  }
+  &-outline-light {
+    border: 1px solid $white;
+  }
+}
+
+textarea {
+  border-radius: 0.625rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.form-dark {
+  .form-group {
+    label {
+      @extend .text-white;
+    }
+    .form-control {
+      background-color: rgba($white, 0.1) !important;
+      color: $white !important;
+      &::placeholder {
+        color: rgba($white, 0.6) !important;
+      }
+    }
+  }
+}
+
+.lead {
+  font-family: $font-family-serif;
+}
+.custom-control-label::after {
+  top: 0.2999rem;
+  left: -1.65rem;
+}
+.custom-radio,
+.custom-checkbox {
+  .custom-control-label::before {
+    border: 1px solid $black !important;
+  }
+}
+.page-item {
+  .page-link {
+    font-size: $lead-font-size;
+    line-height: 0;
+  }
+}
+
+.navbar {
+  z-index: 1;
+  .nav-item {
+    @extend .mx-3;
+    font-size: 23px;
+    &:last-child {
+      @extend .mr-0;
+    }
+    .btn {
+      width: 150px;
+      font-size: 23px;
+    }
+  }
+}

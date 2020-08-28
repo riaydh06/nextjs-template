@@ -1,0 +1,47 @@
+.mh {
+  &-100 {
+    min-height: 100vh;
+  }
+  &-50 {
+    min-height: 50vh;
+  }
+  &-25 {
+    min-height: 25vh;
+  }
+}
+.bottom {
+  &-nmd {
+    bottom: -6px;
+  }
+}
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.link {
+  &-underline {
+    text-decoration: underline;
+  }
+  &-no-decoration {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.text {
+  &-pink {
+    color: $pink-light;
+  }
+}
+
+.pagination-box {
+  width: 50px;
+  height: 50px;
+}
+
+hr {
+  &.dark {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+  }
+}
