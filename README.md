@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Getting Started package
+
+First, run the development server:
+
+```bash
+npx create-next-app nextjs-template-app --use-npm --example "https://github.com/riaydh06/nextjs-template"
+
+```
 ## Getting Started
 
 First, run the development server:
