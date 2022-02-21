@@ -13,7 +13,7 @@ i18n.use(initReactI18next).init({
 
   interpolation: {
     defaultVariables: {
-      RM_URL: 'raremark.com',
+      RM_URL: 'url.com',
     },
   },
 
