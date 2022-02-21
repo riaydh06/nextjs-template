@@ -1,6 +1,10 @@
 {
   "name": "nextjs-template",
-  "version": "0.0.9",
+  "version": "0.0.10",
+  "license": "MIT",
+  "private": false,
+  "author": "Sayed Riaydh",
+  "description": "Next.js template",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
