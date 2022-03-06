@@ -76,11 +76,14 @@ interface IButtonStyleAttributes {
 }
 
 // Returns button class names list according to passed props.
-const getClassNames = (variant, className, block) =>
-  classnames('btn', VARIANT_CLASSNAMES[variant], className);
+const getClassNames = (
+  variant?: VARIANTS,
+  className?: string,
+  block?: boolean,
+): string => classnames('btn', VARIANT_CLASSNAMES[variant], className);
 
 // Return text color according to variant.
-const getTextColor = (variant, color) => {
+const getTextColor = (variant?: VARIANTS, color?: TEXT_COLORS | string) => {
   if (color) {
     return color;
   }
@@ -93,18 +96,20 @@ const getTextColor = (variant, color) => {
 };
 
 // Component represents button with different view types.
-const Button = React.forwardRef(
+const Button = React.forwardRef<
+  HTMLButtonElement | HTMLAnchorElement,
+  IButton & React.HTMLAttributes<HTMLOrSVGElement>
+>(
   (
     {
       component,
       textComponent,
       children,
-      type,
-      variant,
+      type = DEFAULT_BUTTON_TYPE,
+      variant = VARIANTS.PRIMARY,
       tid,
       tvalues,
-      className,
-      textVariant,
+      className = '',
       textColor,
       block,
       ...props
@@ -132,20 +137,5 @@ const Button = React.forwardRef(
     );
   },
 );
-
-Button.defaultProps = {
-  type: DEFAULT_BUTTON_TYPE,
-  variant: VARIANTS.PRIMARY,
-  className: '',
-};
-
-// Button.propTypes = {
-//   type: PropTypes.string.isRequired,
-//   variant: PropTypes.string.isRequired,
-//   textColor: PropTypes.string,
-//   tid: PropTypes.string,
-//   to: PropTypes.string,
-//   block: PropTypes.bool,
-// };
 
 export default Button;
