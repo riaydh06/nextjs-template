@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components/index.js"],
+      "@assets/*": ["src/assets/*"],
+      "@assets": ["src/assets/index.js"],
+      "@actions/*": ["src/actions/*"],
+      "@actions": ["src/actions/index.js"],
+      "@utils/*": ["src/utils/*"],
+      "@utils": ["src/utils/index.js"],
+      "@validations/*": ["src/validations/*"],
+      "@validations": ["src/validations/index.js"],
+      "@helpers/*": ["src/helpers/*"],
+      "@helpers": ["src/helpers/index.js"],
+      "@constants/*": ["src/constants/*"],
+      "@constants": ["src/constants/index.js"],
+      "@containers/*": ["src/containers/*"],
+      "@containers": ["src/containers/index.js"]
+    },
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "exclude": ["node_modules", "build", "coverage", "report"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}
