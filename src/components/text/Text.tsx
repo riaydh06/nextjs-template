@@ -1,31 +1,46 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, Fragment } from 'react';
 import { useTranslation } from 'react-i18next';
 import classnames from 'classnames';
 
 // List of available colors.
-export const COLORS = {
-  PRIMARY: 'text-primary',
-  SECONDARY: 'text-secondary',
+export enum COLORS {
+  PRIMARY = 'text-primary',
+  SECONDARY = 'text-secondary',
 
-  LIGHT: 'text-light',
-  DARK: 'text-dark',
+  LIGHT = 'text-light',
+  DARK = 'text-dark',
 
-  INFO: 'text-info',
-  SUCCESS: 'text-success',
-  DANGER: 'text-danger',
-  WARNING: 'text-warning',
+  INFO = 'text-info',
+  SUCCESS = 'text-success',
+  DANGER = 'text-danger',
+  WARNING = 'text-warning',
 
-  BLACK: 'text-black',
-  WHITE: 'text-white',
+  BLACK = 'text-black',
+  WHITE = 'text-white',
 
-  WHITE: 'text-white',
+  MUTED = 'text-muted',
+}
 
-  MUTED: 'text-muted',
-};
+interface ITextStyleAttributes {
+  color?: COLORS;
+  center?: boolean;
+  className?: string;
+}
+
+interface IText
+  extends ITextTypeAttributes,
+    ITextStyleAttributes,
+    ITextWrapAttributes {
+  tid: string;
+  values?: any;
+  component?: keyof JSX.IntrinsicElements;
+}
 
 // Returns text wrapped with appropriate component according to props.
-const getWrappedText = (props, text) => {
+const getWrappedText = (
+  props: ITextTypeAttributes,
+  text: string,
+): JSX.Element => {
   const { p, bold, h3, h2, h1 } = props;
   if (p) {
     return <p className={getClassNames(props)}>{text}</p>;
@@ -43,16 +58,26 @@ const getWrappedText = (props, text) => {
 };
 
 // Returns class names according to input props.
-export const getClassNames = ({ color, center, className, ...props }) =>
-  classnames(color, className);
+export const getClassNames = ({
+  color,
+  center,
+  className,
+  ...props
+}: ITextStyleAttributes & ITextTypeAttributes) => classnames(color, className);
 
-export const getWrapProps = ({ htmlFor }) => ({
+export const getWrapProps = ({ htmlFor }: ITextWrapAttributes) => ({
   htmlFor,
 });
 
 // Plain component without any HOCs.
 // Returns translated value according to tid prop.
-export const Text = ({ tid, values, children, component, ...props }) => {
+export const Text: FC<IText> = ({
+  tid,
+  values,
+  children,
+  component,
+  ...props
+}) => {
   if (!tid) {
     return null;
   }
@@ -60,8 +85,6 @@ export const Text = ({ tid, values, children, component, ...props }) => {
   const { t } = useTranslation();
 
   let text = getWrappedText(props, t(tid, values));
-  const Wrapper = component;
-  // TODO: remove wrapped component
   return (
     <Fragment>
       {text}
@@ -74,21 +97,6 @@ Text.defaultProps = {
   component: 'div',
   values: {},
   className: '',
-};
-
-Text.propTypes = {
-  component: PropTypes.string,
-  tid: PropTypes.string,
-  values: PropTypes.object,
-
-  className: PropTypes.string,
-  color: PropTypes.string,
-
-  p: PropTypes.bool,
-  bold: PropTypes.bool,
-  h3: PropTypes.bool,
-  h2: PropTypes.bool,
-  h1: PropTypes.bool,
 };
 
 export default Text;

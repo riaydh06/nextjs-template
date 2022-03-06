@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'next/link';
 
@@ -8,29 +7,29 @@ import Text, { COLORS as TEXT_COLORS } from '../text/Text';
 const DEFAULT_BUTTON_TYPE = 'button';
 
 // List of all available button view types.
-export const VARIANTS = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-  SUCCESS: 'success',
-  INFO: 'info',
-  WARNING: 'warning',
-  DANGER: 'danger',
+export enum VARIANTS {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  SUCCESS = 'success',
+  INFO = 'info',
+  WARNING = 'warning',
+  DANGER = 'danger',
 
-  LIGHT: 'light',
-  DARK: 'dark',
-  LINK: 'link',
+  LIGHT = 'light',
+  DARK = 'dark',
+  LINK = 'link',
 
-  PRIMARY_OUTLINE: 'primary-outline',
-  SECONDARY_OUTLINE: 'secondary-outline',
-  SUCCESS_OUTLINE: 'success-outline',
-  INFO_OUTLINE: 'info-outline',
-  WARNING_OUTLINE: 'warning-outline',
-  DANGER_OUTLINE: 'danger-outline',
+  PRIMARY_OUTLINE = 'primary-outline',
+  SECONDARY_OUTLINE = 'secondary-outline',
+  SUCCESS_OUTLINE = 'success-outline',
+  INFO_OUTLINE = 'info-outline',
+  WARNING_OUTLINE = 'warning-outline',
+  DANGER_OUTLINE = 'danger-outline',
 
-  LIGHT_OUTLINE: 'light-outline',
-  DARK_OUTLINE: 'dark-outline',
-  LINK_OUTLINE: 'link-outline',
-};
+  LIGHT_OUTLINE = 'light-outline',
+  DARK_OUTLINE = 'dark-outline',
+  LINK_OUTLINE = 'link-outline',
+}
 
 // Object to map view types to bootstrap class names.
 const VARIANT_CLASSNAMES = {
@@ -55,6 +54,27 @@ const VARIANT_CLASSNAMES = {
   [VARIANTS.LINK_OUTLINE]: 'btn-outline-link',
 };
 
+interface IButton
+  extends IButtonStyleAttributes,
+    React.HTMLProps<HTMLButtonElement> {
+  component?: React.ElementType;
+  textComponent?: keyof JSX.IntrinsicElements;
+  type?: 'submit' | 'reset' | 'button';
+  tid?: string;
+  // TODO fix any
+  tvalues?: any;
+  to?: string;
+}
+
+interface IButtonStyleAttributes {
+  variant?: VARIANTS;
+  className?: string;
+  block?: boolean;
+  color?: TEXT_COLORS | string;
+  textColor?: TEXT_COLORS;
+  smallHeight?: boolean;
+}
+
 // Returns button class names list according to passed props.
 const getClassNames = (variant, className, block) =>
   classnames('btn', VARIANT_CLASSNAMES[variant], className);
@@ -72,7 +92,7 @@ const getTextColor = (variant, color) => {
   return '';
 };
 
-// Component represents button with diffrerent view types.
+// Component represents button with different view types.
 const Button = React.forwardRef(
   (
     {
@@ -119,13 +139,13 @@ Button.defaultProps = {
   className: '',
 };
 
-Button.propTypes = {
-  type: PropTypes.string.isRequired,
-  variant: PropTypes.string.isRequired,
-  textColor: PropTypes.string,
-  tid: PropTypes.string,
-  to: PropTypes.string,
-  block: PropTypes.bool,
-};
+// Button.propTypes = {
+//   type: PropTypes.string.isRequired,
+//   variant: PropTypes.string.isRequired,
+//   textColor: PropTypes.string,
+//   tid: PropTypes.string,
+//   to: PropTypes.string,
+//   block: PropTypes.bool,
+// };
 
 export default Button;
