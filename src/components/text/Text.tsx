@@ -93,10 +93,4 @@ export const Text: FC<IText> = ({
   );
 };
 
-Text.defaultProps = {
-  component: 'div',
-  values: {},
-  className: '',
-};
-
 export default Text;
