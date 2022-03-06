@@ -1,10 +1,17 @@
 {
   "name": "nextjs-template",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "license": "MIT",
   "private": false,
   "author": "Sayed Riaydh",
   "description": "Next.js template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riaydh06/nextjs-template"
+  },
+  "bugs": {
+    "url": "https://github.com/riaydh06/nextjs-template/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
