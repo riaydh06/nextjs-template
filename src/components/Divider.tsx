@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 
-const Divider = ({ className }) => (
+const Divider: FC<IDivider> = ({ className }) => (
   <hr className={classnames({ [className]: !!className })} />
 );
 

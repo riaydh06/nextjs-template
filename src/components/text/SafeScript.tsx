@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
+import { FC } from 'react';
 
-const SafeScript = ({ type, content, src }) => {
+const SafeScript: FC<ISafeScript> = ({ type, content, src }) => {
   return type === 'src' ? (
     <script async src={src}></script>
   ) : (
@@ -9,10 +10,6 @@ const SafeScript = ({ type, content, src }) => {
       dangerouslySetInnerHTML={{ __html: content }}
     ></script>
   );
-};
-
-SafeScript.propTypes = {
-  content: PropTypes.string,
 };
 
 export default SafeScript;
