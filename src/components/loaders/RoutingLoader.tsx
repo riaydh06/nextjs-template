@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import Router from 'next/router';
 import Loader from './Loader';
 
-const RoutingLoader = () => {
+const RoutingLoader: FC = () => {
   const [loading, setLoading] = useState(false);
 
   Router.events.on('routeChangeStart', () => {

@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { FC, Fragment } from 'react';
 import classnames from 'classnames';
 import styles from './Loader.module.scss';
 
-const Loader = ({ size = 50 }) => (
+const Loader: FC<ILoader> = ({ size = 50 }) => (
   <Fragment>
     <div
       className={classnames(

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import i18n from 'i18next';
 
-import Text, { COLORS as TEXT_COLORS } from '../text/Text';
+import Text from '../text/Text';
 import SafeText from '../text/SafeText';
 
 const ControlLabel = ({ name, tid, tvalues, color, component, label }) => {
