@@ -5,7 +5,7 @@ const getErrorConfig = (tid, values = {}) => ({
   values,
 });
 
-export const minLength = (min) => (value) =>
+export const minLength = (min: any) => (value) =>
   value.toString().length >= min
     ? getErrorConfig('VALIDATION_ERRORS.MIN_LENGTH', { min })
     : null;
@@ -19,24 +19,24 @@ export const maxLength_20 = maxLength(20);
 export const maxLength_50 = maxLength(50);
 export const maxLength_300 = maxLength(300);
 
-export const name = (value) =>
+export const name = (value: any) =>
   !/^([A-Za-z'-\s]*)$/.test(value)
     ? getErrorConfig('VALIDATION_ERRORS.NAME')
     : null;
 
-export const email = (value) =>
+export const email = (value: any) =>
   !/^(([^<>()[\]\\.,;:\s@"']+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
     value,
   )
     ? getErrorConfig('VALIDATION_ERRORS.EMAIL')
     : null;
 
-export const userName = (value) =>
+export const userName = (value: any) =>
   !/^([A-Za-z0-9_-]*)$/.test(value)
     ? getErrorConfig('VALIDATION_ERRORS.INCORRECT_USERNAME')
     : null;
 
-export const required = (value) => {
+export const required = (value: any) => {
   if (!value) {
     return REQUIRED_TEXT_TID;
   }
@@ -44,7 +44,7 @@ export const required = (value) => {
   return null;
 };
 
-export const required_custom = (errorId) => (value) => {
+export const required_custom = (errorId: any) => (value) => {
   if (required(value)) {
     return errorId;
   }

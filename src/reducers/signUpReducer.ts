@@ -1,10 +1,10 @@
 import { SIGN_UP } from '@actions';
 
-const initilState = {
+const initialState = {
   success: false,
 };
 
-const signUpReducer = (state = initilState, action) => {
+const signUpReducer = (state = initialState, action) => {
   switch (action.type) {
     case SIGN_UP.SIGN_UP_SUCCESS:
       return {
