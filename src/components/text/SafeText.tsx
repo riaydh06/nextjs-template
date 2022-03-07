@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-const SafeText = ({ content, component, className, ...props }) => {
+const SafeText: FC<ISafeText> = ({
+  content,
+  component,
+  className,
+  ...props
+}) => {
   const Wrap = component || 'div';
 
   return (
