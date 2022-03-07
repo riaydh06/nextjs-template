@@ -1,8 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 
-const Container = ({ children, component, className, fluid, ...props }) => {
+const Container: FC<IContainer> = ({
+  children,
+  component,
+  className,
+  fluid,
+  ...props
+}) => {
   const TagName = component;
   const classNames = classnames(`container${fluid ? '-fluid' : ''}`, className);
   return (
@@ -15,11 +20,6 @@ const Container = ({ children, component, className, fluid, ...props }) => {
 Container.defaultProps = {
   className: '',
   component: 'div',
-};
-
-Container.propTypes = {
-  className: PropTypes.string,
-  component: PropTypes.any,
 };
 
 export default Container;

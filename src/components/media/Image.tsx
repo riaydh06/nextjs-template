@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 import styles from './Image.module.scss';
 
-const Image = ({ image, className }) => {
+const Image: FC<IImage> = ({ image, className }) => {
   if (!image) {
     return null;
   }
@@ -15,10 +14,6 @@ const Image = ({ image, className }) => {
       title={image.title}
     ></div>
   );
-};
-
-Image.propTypes = {
-  image: PropTypes.object,
 };
 
 export default Image;
