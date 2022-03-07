@@ -30,7 +30,7 @@ const ControlHelperText = (props) => {
     if (helpTextTId) {
       return (
         <Text
-          color={TEXT_COLORS.DARK_GREY}
+          color={TEXT_COLORS.DARK}
           className="ml-4 small"
           values={helperTextValues}
           tid={helpTextTId}
