@@ -1,8 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import classnames from 'classnames';
 import { MAIN_CONTENT_ID } from '@constants';
 
-const Page = ({ children, className }) => {
+const Page: FC = ({
+  children,
+  className,
+}: {
+  children: string;
+  className: string;
+}) => {
   const classNames = classnames({ [className]: !!className });
 
   useEffect(() => {
