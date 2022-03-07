@@ -1,7 +1,7 @@
 import sanitizeHtml from 'xss';
 
 const ALLOWED_ATTRS = ['class'];
-const WHITE_LIST = { ...sanitizeHtml.whiteList };
+const WHITE_LIST = { ...sanitizeHtml?.whiteList };
 Object.keys(WHITE_LIST).forEach((key) => {
   WHITE_LIST[key] = WHITE_LIST[key].concat(ALLOWED_ATTRS);
 });

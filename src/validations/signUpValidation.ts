@@ -21,4 +21,4 @@ const config = {
   ],
 };
 
-export const validate = (values) => validator(values, config);
+export const validate = (values: any) => validator(values, config);
