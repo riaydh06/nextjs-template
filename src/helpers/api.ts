@@ -17,7 +17,7 @@ const api = axios.create({
   },
 });
 
-const onResponseSuccess = (response) => {
+const onResponseSuccess = (response: any) => {
   const { data } = response;
 
   return Promise.resolve({

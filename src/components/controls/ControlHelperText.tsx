@@ -11,7 +11,7 @@ const ControlHelperText: FC<IControlHelperText> = (props) => {
   } = props;
 
   if (isErrorState(props)) {
-    const config = error.tid
+    const config = error?.tid
       ? error
       : {
           tid: error || undefined,

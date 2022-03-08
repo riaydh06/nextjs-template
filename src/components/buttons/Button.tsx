@@ -77,9 +77,8 @@ interface IButtonStyleAttributes {
 
 // Returns button class names list according to passed props.
 const getClassNames = (
-  variant?: VARIANTS,
+  variant = VARIANTS.PRIMARY,
   className?: string,
-  block?: boolean,
 ): string => classnames('btn', VARIANT_CLASSNAMES[variant], className);
 
 // Return text color according to variant.
@@ -128,7 +127,7 @@ const Button = React.forwardRef<
       <WrapComponent
         ref={ref}
         type={type}
-        className={getClassNames(variant, className, block)}
+        className={getClassNames(variant, className)}
         {...props}
       >
         {tid && <Text component={textComponent} tid={tid} values={tvalues} />}
