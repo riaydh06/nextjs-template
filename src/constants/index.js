@@ -5,7 +5,7 @@ export const FORM_NAMES = {
   SIGN_UP: 'SignUp',
 };
 
-export const INPUT_FIELD_DEFAULT_VELUES = {
+export const INPUT_FIELD_DEFAULT_VALUES = {
   DEFAULT_MAX_LENGTH: 300,
   DEFAULT_ROWS: 6,
   DEFAULT_HEIGHT: 38,

@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
 import classnames from 'classnames';
 import { withTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
 import {
   getLabelProps,
@@ -11,67 +11,92 @@ import {
 import ControlLabel from './ControlLabel';
 import ControlHelperText from './ControlHelperText';
 import CustomInput from './CustomInput';
+import { FIELDS } from '@constants';
 
-class TextField extends Component {
-  renderInput = () => {
-    const {
-      type,
-      id,
-      placeholderTId,
-      input: { className, ...inputProps },
-      InputProps,
-      endAdornment,
-      endAdornmentProps = {},
-      t,
-    } = this.props;
+const RenderInput = (props) => {
+  const {
+    borderColor,
+    type,
+    placeholderTId,
+    placeholder,
+    input: { className, ...inputProps },
+    InputProps,
+    value,
+    endAdornment,
+    endAdornmentProps = {},
+    t,
+    styleClasses = '',
+    disabled,
+  } = props;
+  const classNames = classnames(
+    'text-field-input',
+    `text-field-input--${
+      type === FIELDS.ACCOUNT.PASSWORD && borderColor
+        ? borderColor
+        : getCurrentState(props)
+    }`,
+    {
+      'text-field-input--height': !InputProps.multiline,
+    },
+    {
+      'text-field-input--end-adornment': !!endAdornment,
+    },
+    'form-control',
+    inputProps.className || '',
+  );
 
-    const classNames = classnames(
-      `border border-${getCurrentState(this.props)}`,
-      'form-control',
-      className || '',
-    );
+  const fieldClasses = classnames('text-field-input-container', styleClasses);
+  const placeholderValue = placeholderTId ? t(placeholderTId) : placeholder;
 
-    return (
-      <Fragment>
-        <CustomInput
-          type={type}
-          placeholder={t(placeholderTId)}
-          className={classNames}
-          id={id}
-          {...InputProps}
-          {...inputProps}
-        />
-        {endAdornment ? (
-          <div
-            {...endAdornmentProps}
-            className={classnames({
-              [endAdornmentProps.className]: !!endAdornmentProps.className,
-            })}
-          >
-            {endAdornment}
-          </div>
-        ) : null}
-      </Fragment>
-    );
-  };
+  return (
+    <div className={fieldClasses}>
+      <CustomInput
+        type={type}
+        placeholder={placeholderValue}
+        value={value}
+        className={classNames}
+        id={inputProps.name}
+        {...InputProps}
+        {...inputProps}
+        disabled={disabled}
+      />
+      {endAdornment ? (
+        <div
+          {...endAdornmentProps}
+          className={classnames('text-field-input-endAdornment', {
+            [endAdornmentProps.className]: !!endAdornmentProps.className,
+          })}
+        >
+          {endAdornment}
+        </div>
+      ) : null}
+    </div>
+  );
+};
 
-  render() {
-    const { withLabel } = this.props;
-
-    return (
-      <div className="form-group">
-        {withLabel && <ControlLabel {...getLabelProps(this.props)} />}
-        {this.renderInput()}
-        <ControlHelperText {...getHelperTextProps(this.props)} />
-      </div>
-    );
-  }
-}
+const TextField = (props) => {
+  const { withLabel, withHelperText } = props;
+  return (
+    <div className="my-3">
+      {withLabel && <ControlLabel {...getLabelProps(props)} />}
+      <RenderInput {...props} />
+      {withHelperText && <ControlHelperText {...getHelperTextProps(props)} />}
+    </div>
+  );
+};
 
 TextField.defaultProps = {
   type: 'text',
   withLabel: true,
+  withHelperText: true,
   InputProps: {},
+};
+
+TextField.propTypes = {
+  withLabel: PropTypes.bool,
+
+  withHelperText: PropTypes.bool,
+  InputProps: PropTypes.object,
 };
 
 export default withTranslation()(TextField);
