@@ -5,6 +5,9 @@ export const FIELDS = {
     EMAIL: 'email',
     KIND: 'kind',
   },
+  ACCOUNT: {
+    PASSWORD: 'password',
+  },
 };
 
 export const IMAGE = {

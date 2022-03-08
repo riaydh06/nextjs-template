@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import i18n from 'i18next';
@@ -6,7 +6,14 @@ import i18n from 'i18next';
 import Text from '../text/Text';
 import SafeText from '../text/SafeText';
 
-const ControlLabel = ({ name, tid, tvalues, color, component, label }) => {
+const ControlLabel: FC<IControlLabel> = ({
+  name,
+  tid,
+  tvalues,
+  color,
+  component,
+  label,
+}) => {
   if (tid && !i18n.exists(tid)) {
     return null;
   }
@@ -23,15 +30,6 @@ const ControlLabel = ({ name, tid, tvalues, color, component, label }) => {
       )}
     </WrapComponent>
   );
-};
-
-ControlLabel.propTypes = {
-  name: PropTypes.string,
-  tid: PropTypes.string,
-  tvalues: PropTypes.object,
-  component: PropTypes.any,
-  color: PropTypes.string,
-  label: PropTypes.string,
 };
 
 export default ControlLabel;
