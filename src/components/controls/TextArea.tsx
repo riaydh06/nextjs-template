@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, FC } from 'react';
 
 import TextField from './TextField';
 
 import { INPUT_FIELD_DEFAULT_VALUES } from '@constants';
 
-const TextArea = (props) => {
+const TextArea: FC<ITextArea> = (props) => {
   const [value, setValue] = useState('');
   const [height, setHeight] = useState(
     INPUT_FIELD_DEFAULT_VALUES.DEFAULT_HEIGHT,
@@ -66,13 +65,6 @@ const TextArea = (props) => {
       }}
     />
   );
-};
-
-TextArea.propTypes = {
-  rows: PropTypes.number,
-  maxLength: PropTypes.number,
-  scrollHeight: PropTypes.bool,
-  helpTextTId: PropTypes.bool,
 };
 
 TextArea.defaultProps = {

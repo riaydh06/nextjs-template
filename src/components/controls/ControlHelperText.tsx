@@ -1,10 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FC } from 'react';
 
 import Text, { COLORS as TEXT_COLORS } from '../text/Text';
 import { isErrorState } from '../../utils/controls';
 
-const ControlHelperText = (props) => {
+const ControlHelperText: FC<IControlHelperText> = (props) => {
   const {
     meta: { error },
     helpTextTId,
@@ -40,11 +39,6 @@ const ControlHelperText = (props) => {
   }
 
   return null;
-};
-
-ControlHelperText.propTypes = {
-  helpTextTId: PropTypes.string,
-  error: PropTypes.any,
 };
 
 export default ControlHelperText;

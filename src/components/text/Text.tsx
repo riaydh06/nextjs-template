@@ -31,7 +31,7 @@ interface IText
   extends ITextTypeAttributes,
     ITextStyleAttributes,
     ITextWrapAttributes {
-  tid: string;
+  tid?: string;
   values?: any;
   component?: keyof JSX.IntrinsicElements;
 }

@@ -1,6 +1,6 @@
+import { FC } from 'react';
 import classnames from 'classnames';
 import { withTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
 
 import {
   getLabelProps,
@@ -13,7 +13,7 @@ import ControlHelperText from './ControlHelperText';
 import CustomInput from './CustomInput';
 import { FIELDS } from '@constants';
 
-const RenderInput = (props) => {
+const RenderInput: FC<ITextField> = (props) => {
   const {
     borderColor,
     type,
@@ -90,13 +90,6 @@ TextField.defaultProps = {
   withLabel: true,
   withHelperText: true,
   InputProps: {},
-};
-
-TextField.propTypes = {
-  withLabel: PropTypes.bool,
-
-  withHelperText: PropTypes.bool,
-  InputProps: PropTypes.object,
 };
 
 export default withTranslation()(TextField);
