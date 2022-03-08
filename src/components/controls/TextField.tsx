@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import classnames from 'classnames';
-import { withTranslation } from 'react-i18next';
+import { withTranslation, WithTranslation } from 'react-i18next';
 
 import {
   getLabelProps,
@@ -13,7 +13,7 @@ import ControlHelperText from './ControlHelperText';
 import CustomInput from './CustomInput';
 import { FIELDS } from '@constants';
 
-const RenderInput: FC<ITextField> = (props) => {
+const RenderInput: FC<ITextField & WithTranslation> = (props) => {
   const {
     borderColor,
     type,
@@ -74,7 +74,7 @@ const RenderInput: FC<ITextField> = (props) => {
   );
 };
 
-const TextField = (props) => {
+const TextField: FC<ITextField & WithTranslation> = (props) => {
   const { withLabel, withHelperText } = props;
   return (
     <div className="my-3">

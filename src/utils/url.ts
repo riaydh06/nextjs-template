@@ -1,10 +1,10 @@
 import Router from 'next/router';
 
-export const getParsedSearch = (url) =>
+export const getParsedSearch = (url?: any) =>
   (url || window.location.search)
     .replace('?', '')
     .split('&')
-    .reduce((res, param = '') => {
+    .reduce((res: any, param = '') => {
       const [prop, value] = param.split('=');
       if (prop && value) {
         res[prop] = decodeURIComponent(value);
@@ -13,12 +13,12 @@ export const getParsedSearch = (url) =>
       return res;
     }, {});
 
-export const addQueryString = (newString) => {
+export const addQueryString = (newString: any) => {
   const urlToSet = `${window.location.pathname}${newString}`;
   Router.push(urlToSet, undefined, { shallow: true });
 };
 
-export const changeQueryString = (changedValues) => {
+export const changeQueryString = (changedValues: any) => {
   const router = Router;
 
   let values = Object.keys(router.query).length
@@ -32,7 +32,7 @@ export const changeQueryString = (changedValues) => {
       }
     : {};
 
-  const crateUrlValues = [];
+  const crateUrlValues: any = [];
   Object.keys(values).forEach((key) => {
     if (typeof values[key] === 'object' && values[key].length === 0) {
       return;

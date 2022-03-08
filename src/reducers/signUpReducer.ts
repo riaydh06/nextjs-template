@@ -4,7 +4,7 @@ const initialState = {
   success: false,
 };
 
-const signUpReducer = (state = initialState, action) => {
+const signUpReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case SIGN_UP.SIGN_UP_SUCCESS:
       return {

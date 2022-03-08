@@ -1,6 +1,6 @@
 const http = require('http');
 
-export default (req, res) => {
+export default (req: any, res: any) => {
   // Test
   const options = {
     host: 'localhost',
@@ -9,7 +9,7 @@ export default (req, res) => {
   };
   let error = null;
 
-  const healthCheck = http.request(options, (res) => {
+  const healthCheck = http.request(options, (res: any) => {
     console.log(`HEALTHCHECK STATUS: ${res.statusCode}`);
     if (res.statusCode == 200) {
       console.log('Server working as per expectation code: 200');
@@ -17,7 +17,7 @@ export default (req, res) => {
       console.log('Error on server error code:', res.statusCode);
     }
   });
-  healthCheck.on('error', function (err) {
+  healthCheck.on('error', function (err: any) {
     console.log('ERROR', err);
     error = err;
   });

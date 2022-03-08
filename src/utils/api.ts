@@ -9,9 +9,9 @@ Object.keys(WHITE_LIST).forEach((key) => {
 const CONFIG = {
   whiteList: WHITE_LIST,
 };
-export const escapeStr = (str) => sanitizeHtml(str, CONFIG);
+export const escapeStr = (str: any) => sanitizeHtml(str, CONFIG);
 
-export const performResponseData = (data) => {
+export const performResponseData = (data: any): any => {
   if (!data) {
     return data;
   }
@@ -27,7 +27,7 @@ export const performResponseData = (data) => {
   if (typeof data === 'object') {
     const res = {};
 
-    Object.keys(data).forEach((key) => {
+    Object.keys(data).forEach((key: any) => {
       res[key] = performResponseData(data[key]);
     });
 

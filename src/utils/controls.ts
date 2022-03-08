@@ -12,18 +12,34 @@ export const getLabelProps = ({
   tvalues,
   label,
   labelColor,
+}: {
+  input: { name: string };
+  tid?: string;
+  tvalues?: any;
+  label?: string;
+  labelColor?: string;
 }) => ({ name, tid, tvalues, label, color: labelColor });
 
 export const getHelperTextProps = ({
   meta: { error, touched },
   helpTextTId,
   helperTextValues,
+}: {
+  meta: { error: any; touched?: any };
+  helpTextTId?: any;
+  helperTextValues?: any;
 }) => ({ meta: { error, touched }, helpTextTId, helperTextValues });
 
 export const getCurrentState = ({
   meta: { error, touched },
   disableValidation,
   InputProps = {},
+}: {
+  meta: { error: any; touched: any };
+  disableValidation: any;
+  InputProps: {
+    disabled?: boolean;
+  };
 }) => {
   if (disableValidation) {
     return STATES.INITIAL;
@@ -44,7 +60,9 @@ export const getCurrentState = ({
   return STATES.VALID;
 };
 
-export const isErrorState = (props) => getCurrentState(props) === STATES.ERROR;
-export const isValidState = (props) => getCurrentState(props) === STATES.VALID;
-export const isPristineState = (props) =>
+export const isErrorState = (props: any) =>
+  getCurrentState(props) === STATES.ERROR;
+export const isValidState = (props: any) =>
+  getCurrentState(props) === STATES.VALID;
+export const isPristineState = (props: any) =>
   getCurrentState(props) === STATES.PRISTINE;
