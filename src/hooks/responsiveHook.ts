@@ -11,7 +11,7 @@ const upToTablet = () => window.innerWidth < DEVICE_SIZES_VALUE.DESKTOP;
 
 const desktopOnly = () => window.innerWidth > DEVICE_SIZES_VALUE.DESKTOP;
 
-const findViewType = (deviceType) => {
+const findViewType = (deviceType: string) => {
   switch (deviceType) {
     case DEVICE_TYPE.MOBILE_ONLY:
       return mobileOnly();
@@ -30,7 +30,7 @@ const findViewType = (deviceType) => {
   }
 };
 
-export const useView = (type) => {
+export const useView = (type: string) => {
   const isInit = useRef(true);
   const [isTypeFound, setIsTypeFound] = useState(false);
 
