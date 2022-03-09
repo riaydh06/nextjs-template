@@ -1,5 +1,5 @@
 interface ISafeScript {
   type: string;
-  content?: string;
+  content: string;
   src?: string;
 }
