@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { FC } from 'react';
 
 const SafeScript: FC<ISafeScript> = ({ type, content, src }) => {

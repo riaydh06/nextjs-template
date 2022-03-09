@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
 
 const SafeText: FC<ISafeText> = ({
   content,
@@ -17,10 +16,6 @@ const SafeText: FC<ISafeText> = ({
       dangerouslySetInnerHTML={{ __html: content }}
     ></Wrap>
   );
-};
-
-SafeText.propTypes = {
-  content: PropTypes.string,
 };
 
 export default SafeText;

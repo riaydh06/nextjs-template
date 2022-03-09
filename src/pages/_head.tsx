@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 
 import { useTranslation } from 'react-i18next';
 
-const getTitleId = (id) => `META_TITLES.${id}`;
-const getDescriptionId = (id) => `META_DESCRIPTIONS.${id}`;
+const getTitleId = (id: string) => `META_TITLES.${id}`;
+const getDescriptionId = (id: string) => `META_DESCRIPTIONS.${id}`;
 
-const ServiceHead = ({ id, content }) => {
+const ServiceHead = ({ id, content }: { id: string; content: string }) => {
   const { t } = useTranslation();
 
   return (
@@ -17,11 +16,6 @@ const ServiceHead = ({ id, content }) => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
   );
-};
-
-ServiceHead.propTypes = {
-  id: PropTypes.string,
-  content: PropTypes.string,
 };
 
 export default ServiceHead;

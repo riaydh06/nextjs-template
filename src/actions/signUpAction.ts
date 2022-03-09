@@ -8,7 +8,7 @@ const postSignUpSuccess = () => ({
   type: SIGN_UP.SIGN_UP_SUCCESS,
 });
 
-export const postSignUp = (data) => (dispatch) => {
+export const postSignUp = (data: any) => (dispatch: any) => {
   const items = {
     contact_message: {
       ...data,
