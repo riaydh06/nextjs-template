@@ -1,9 +1,9 @@
 import i18n from 'i18next';
 import { IMAGE } from '@constants/fields';
 
-export const isOddNumber = (num: any) => num % 2 === 0;
+export const isOddNumber = (num: number) => num % 2 === 0;
 
-export const getAssetUrl = (name: any) =>
+export const getAssetUrl = (name: string) =>
   `${process.env.PUBLIC_URL}/assets/${name}`;
 
 export const performImage = (item: any) => {
@@ -18,4 +18,4 @@ export const performImage = (item: any) => {
   };
 };
 
-export const performType = (tid: any) => i18n.t(tid);
+export const performType = (tid: string) => i18n.t(tid);
