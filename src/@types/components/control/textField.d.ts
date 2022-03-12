@@ -1,8 +1,9 @@
 interface ITextField {
-  InputProps?: {
+  InputProps: {
     style?: { overflow: string; height: number } | null;
     multiline?: boolean;
     rows?: number;
+    className?: string;
   };
   borderColor?: string;
   placeholderTId?: string;
@@ -31,7 +32,7 @@ interface ITextField {
   onChange?: function;
   children?: ReactNode;
   meta?: {
-    error?: { tid?: string } | undefined;
-    touched?: any;
+    error?: { tid?: string };
+    touched?: boolean;
   };
 }

@@ -6,41 +6,55 @@ export const STATES = {
   DISABLED: 'disabled',
 };
 
+type GetLabelProps = {
+  input?: { name?: string };
+  tid?: string;
+  tvalues?: any;
+  label?: string;
+  labelColor?: string;
+};
+
 export const getLabelProps = ({
   input: { name },
   tid,
   tvalues,
   label,
   labelColor,
-}: {
-  input: { name: string };
-  tid?: string;
-  tvalues?: any;
-  label?: string;
-  labelColor?: string;
-}) => ({ name, tid, tvalues, label, color: labelColor });
+}: GetLabelProps) => ({ name, tid, tvalues, label, color: labelColor });
+
+type GetHelperTextProps = {
+  meta?: { error?: { tid?: string }; touched?: boolean };
+  helpTextTId?: any;
+  helperTextValues?: any;
+};
 
 export const getHelperTextProps = ({
   meta: { error, touched },
   helpTextTId,
   helperTextValues,
-}: {
-  meta: { error?: { tid?: string } | undefined; touched?: any };
-  helpTextTId?: any;
-  helperTextValues?: any;
-}) => ({ meta: { error, touched }, helpTextTId, helperTextValues });
+}: GetHelperTextProps) => ({
+  meta: { error, touched },
+  helpTextTId,
+  helperTextValues,
+});
+
+type GetCurrentState = {
+  meta?: { error?: { tid?: string }; touched?: boolean };
+  disableValidation?: any;
+  InputProps: {
+    style?: { overflow: string; height: number } | null;
+    multiline?: boolean;
+    rows?: number;
+    className?: string;
+    disabled?: boolean;
+  };
+};
 
 export const getCurrentState = ({
   meta: { error, touched },
   disableValidation,
   InputProps = {},
-}: {
-  meta: { error?: { tid?: string } | undefined; touched: any };
-  disableValidation: any;
-  InputProps: {
-    disabled?: boolean;
-  };
-}) => {
+}: GetCurrentState) => {
   if (disableValidation) {
     return STATES.INITIAL;
   }

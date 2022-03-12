@@ -1,7 +1,7 @@
 interface IControlHelperText {
   meta: {
-    error?: { tid?: string } | undefined;
-    touched?: any;
+    error?: { tid?: string };
+    touched?: boolean;
   };
   helpTextTId?: string;
   helperTextValues?: {

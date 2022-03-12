@@ -42,7 +42,6 @@ const RenderInput: FC<ITextField & WithTranslation> = (props) => {
       'text-field-input--end-adornment': !!endAdornment,
     },
     'form-control',
-    inputProps.className || '',
   );
 
   const fieldClasses = classnames('text-field-input-container', styleClasses);
