@@ -5,24 +5,18 @@ import { isErrorState } from '../../utils/controls';
 
 const ControlHelperText: FC<IControlHelperText> = (props) => {
   const {
-    meta: { error },
+    meta: { error = {} },
     helpTextTId,
     helperTextValues,
   } = props;
 
   if (isErrorState(props)) {
-    const config = error?.tid
-      ? error
-      : {
-          tid: error || undefined,
-        };
-
     return (
       <Text
         p
+        tid={error?.tid ? error.tid : (error as string)}
         color={TEXT_COLORS.DANGER}
         className="ml-4 small position-relative bottom-nmd"
-        {...config}
       />
     );
   } else {

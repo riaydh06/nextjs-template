@@ -9,10 +9,10 @@ interface ITextField {
   placeholderTId?: string;
   placeholder?: string;
   input: {
+    name?: string;
     value?: string;
     onChange?: (e: any, ...args: any) => void;
     className?: string;
-    name?: string;
   };
   value?: string;
   endAdornment?: any;

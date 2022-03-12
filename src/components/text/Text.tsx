@@ -33,7 +33,7 @@ interface IText
     ITextWrapAttributes {
   tid?: string;
   values?: any;
-  component?: keyof JSX.IntrinsicElements;
+  component?: string;
 }
 
 // Returns text wrapped with appropriate component according to props.
