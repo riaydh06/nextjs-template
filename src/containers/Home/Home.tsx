@@ -1,7 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
+import { Text } from '@components';
 
-const Home: FC = () => {
-  return <h1>Hello Next.js</h1>;
+const Home = () => {
+  return (
+    <div className="d-flex justify-content-center">
+      <Text tid="HOME.WELCOME" />
+    </div>
+  );
 };
 
 export default Home;
