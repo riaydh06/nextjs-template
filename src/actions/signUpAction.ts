@@ -8,12 +8,14 @@ const postSignUpSuccess = () => ({
   type: SIGN_UP.SIGN_UP_SUCCESS,
 });
 
-export const postSignUp = (data: any) => (dispatch: any) => {
+export const postSignUp = (data: object) => (dispatch: any) => {
   const items = {
     contact_message: {
       ...data,
       kind: FIELDS.SIGN_UP.KIND,
     },
   };
-  return api.post(URLS, items).then(() => dispatch(postSignUpSuccess()));
+  return api
+    .post(URLS.SIGN_UP, items)
+    .then(() => dispatch(postSignUpSuccess()));
 };
