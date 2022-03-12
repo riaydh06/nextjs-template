@@ -2,10 +2,9 @@ import React, { FC, ReactNode, useEffect } from 'react';
 import classnames from 'classnames';
 import { MAIN_CONTENT_ID } from '@constants';
 
-const Page: FC<{
-  children: ReactNode;
-  className?: string;
-}> = ({ children, className = '' }) => {
+type TPage = { children: ReactNode; className?: string };
+
+const Page: FC<TPage> = ({ children, className = '' }) => {
   const classNames = classnames({ [className]: !!className });
 
   useEffect(() => {
