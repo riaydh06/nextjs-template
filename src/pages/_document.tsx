@@ -1,9 +1,15 @@
 import React from 'react';
-import Document, { Html, Main, NextScript, Head } from 'next/document';
-const getIconPath = (size) => `/fav/favicon_${size}.png`;
+import Document, {
+  Html,
+  Main,
+  NextScript,
+  Head,
+  DocumentContext,
+} from 'next/document';
+const getIconPath = (size: any) => `/fav/favicon_${size}.png`;
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
 
     return {
@@ -11,7 +17,7 @@ class MyDocument extends Document {
     };
   }
 
-  render() {
+  public render() {
     return (
       <Html>
         <Head>
