@@ -23,7 +23,7 @@ interface ITextField {
   disableValidation?: boolean;
   t: string;
   styleClasses?: string;
-  type?: any;
+  type?: string;
   helpTextTId?: string;
   helperTextValues?: {
     max?: number;

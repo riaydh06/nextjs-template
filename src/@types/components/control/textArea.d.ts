@@ -5,7 +5,7 @@ interface ITextArea {
   helpTextTId: boolean;
   InputProps: object;
   input: {
-    value: any;
+    value: string;
     onChange?: function;
   };
 }
