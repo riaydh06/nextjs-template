@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Text } from '@components';
 
-const Home = () => {
+const Home: FC = () => {
   return (
     <div className="d-flex justify-content-center">
       <Text tid="HOME.WELCOME" />
