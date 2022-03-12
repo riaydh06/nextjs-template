@@ -1,5 +1,5 @@
 .btn {
-  @extend .btn-block;
+  @extend .btn-block !optional;
   &-lg {
     height: 60px;
     @include media-breakpoint-down(md) {
@@ -61,7 +61,7 @@ textarea {
     @extend .mx-3;
     font-size: 23px;
     &:last-child {
-      @extend .mr-0;
+      @extend .mr-0 !optional;
     }
     .btn {
       width: 150px;

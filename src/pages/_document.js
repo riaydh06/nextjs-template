@@ -16,7 +16,11 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet="UTF-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Baskervville&family=Roboto:wght@400;500&display=swap"
+            rel="stylesheet"
+          />
 
           <link rel="icon" href={getIconPath(32)} sizes="32x32" />
           <link rel="icon" href={getIconPath(128)} sizes="128x128" />

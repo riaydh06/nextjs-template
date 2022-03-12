@@ -14,11 +14,7 @@ const ServiceHead = ({ id, content }) => {
     <Head>
       <title>{t(getTitleId(id), { content })}</title>
       <meta name="description" content={t(getDescriptionId(id), { content })} />
-
-      <link
-        href="https://fonts.googleapis.com/css2?family=Baskervville&family=Roboto:wght@400;500&display=swap"
-        rel="stylesheet"
-      />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
   );
 };

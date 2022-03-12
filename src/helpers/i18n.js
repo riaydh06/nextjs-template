@@ -18,8 +18,8 @@ i18n.use(initReactI18next).init({
   },
 
   react: {
-    wait: true,
     defaultTransParent: 'span',
+    useSuspense: true,
   },
 });
 

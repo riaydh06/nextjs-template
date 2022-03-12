@@ -7,6 +7,7 @@ import validationError from './validationError.json';
 import notFound from './notFound.json';
 import metaTitle from './metaTitle.json';
 import metaDescription from './metaDescription.json';
+import home from './home.json';
 
 export default {
   translation: {
@@ -18,5 +19,6 @@ export default {
     VALIDATION_ERRORS: validationError,
     TEXT_AREA: textArea,
     NOT_FOUND: notFound,
+    HOME: home,
   },
 };
