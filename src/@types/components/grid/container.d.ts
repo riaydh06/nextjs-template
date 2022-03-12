@@ -1,5 +1,5 @@
 interface IContainer {
-  component?: keyof JSX.IntrinsicElements;
+  component?: string;
   className?: string;
   fluid?: boolean;
 }

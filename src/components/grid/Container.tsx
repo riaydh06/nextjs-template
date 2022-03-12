@@ -8,7 +8,7 @@ const Container: FC<IContainer> = ({
   fluid,
   ...props
 }) => {
-  const TagName = component;
+  const TagName: any = component;
   const classNames = classnames(`container${fluid ? '-fluid' : ''}`, className);
   return (
     <TagName className={classNames} {...props}>

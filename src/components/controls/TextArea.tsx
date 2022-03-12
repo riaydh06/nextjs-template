@@ -14,7 +14,7 @@ const TextArea: FC<ITextArea> = (props) => {
     setValue(props.input.value);
   }, [props.input.value]);
 
-  const onChange = (e, ...args) => {
+  const onChange = (e: any, ...args: any) => {
     const { input, scrollHeight } = props;
 
     setValue(e.target.value);
@@ -38,7 +38,6 @@ const TextArea: FC<ITextArea> = (props) => {
 
   return (
     <TextField
-      {...props}
       InputProps={{
         multiline: true,
         rows: scrollHeight ? 1 : rows,

@@ -1,4 +1,9 @@
 interface ICustomInput {
-  mask: boolean;
-  multiline: boolean;
+  type?: any;
+  placeholder?: string;
+  className?: string;
+  id?: any;
+  mask?: boolean;
+  multiline?: boolean;
+  disabled?: boolean;
 }

@@ -25,7 +25,7 @@ export const getHelperTextProps = ({
   helpTextTId,
   helperTextValues,
 }: {
-  meta: { error: any; touched?: any };
+  meta: { error?: { tid?: string } | undefined; touched?: any };
   helpTextTId?: any;
   helperTextValues?: any;
 }) => ({ meta: { error, touched }, helpTextTId, helperTextValues });
@@ -35,7 +35,7 @@ export const getCurrentState = ({
   disableValidation,
   InputProps = {},
 }: {
-  meta: { error: any; touched: any };
+  meta: { error?: { tid?: string } | undefined; touched: any };
   disableValidation: any;
   InputProps: {
     disabled?: boolean;

@@ -2,7 +2,7 @@ interface ITextArea {
   rows: number;
   maxLength: number;
   scrollHeight: bool;
-  helpTextTId: bool;
+  helpTextTId: boolean;
   InputProps: object;
   input: {
     value: any;
