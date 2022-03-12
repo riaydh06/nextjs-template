@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@components": ["src/components/index.js"],
+      "@components": ["src/components/index.ts"],
       "@assets/*": ["src/assets/*"],
       "@assets": ["src/assets/index.js"],
       "@actions/*": ["src/actions/*"],
@@ -13,7 +13,7 @@
       "@validations/*": ["src/validations/*"],
       "@validations": ["src/validations/index.ts"],
       "@helpers/*": ["src/helpers/*"],
-      "@helpers": ["src/helpers/index.js"],
+      "@helpers": ["src/helpers/index.ts"],
       "@constants/*": ["src/constants/*"],
       "@constants": ["src/constants/index.ts"],
       "@containers/*": ["src/containers/*"],
@@ -35,5 +35,5 @@
     "incremental": true
   },
   "exclude": ["node_modules", "build", "coverage", "report"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/helpers/i18n.ts", "src/helpers/store.ts"]
 }

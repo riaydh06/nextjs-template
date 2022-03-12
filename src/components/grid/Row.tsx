@@ -20,7 +20,7 @@ export enum ALIGN {
 
 interface IRow {
   id?: string;
-  component: keyof JSX.IntrinsicElements;
+  component?: keyof JSX.IntrinsicElements;
   className?: string;
   justify?: JUSTIFY;
   align?: ALIGN;
