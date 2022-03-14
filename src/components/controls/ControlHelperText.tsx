@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import Text, { COLORS as TEXT_COLORS } from '../text/Text';
-import { isErrorState } from '../../utils/controls';
+import { isErrorState } from '@utils/controls';
 
 const ControlHelperText: FC<IControlHelperText> = (props) => {
   const {
