@@ -5,7 +5,7 @@ const getErrorConfig = (tid: string, values = {}) => ({
   values,
 });
 
-export const minLength = (min: any) => (value: number) =>
+export const minLength = (min: number) => (value: number) =>
   value.toString().length >= min
     ? getErrorConfig('VALIDATION_ERRORS.MIN_LENGTH', { min })
     : null;

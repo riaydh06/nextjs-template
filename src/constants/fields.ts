@@ -10,8 +10,8 @@ export const FIELDS = {
   },
 };
 
-export const IMAGE = {
-  ALT: 'alt',
-  TITLE: 'title',
-  URL: '',
-};
+export enum IMAGE {
+  ALT = 'alt',
+  TITLE = 'title',
+  URL = 'url',
+}

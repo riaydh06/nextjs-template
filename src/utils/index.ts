@@ -6,7 +6,13 @@ export const isOddNumber = (num: number) => num % 2 === 0;
 export const getAssetUrl = (name: string) =>
   `${process.env.PUBLIC_URL}/assets/${name}`;
 
-export const performImage = (item: any) => {
+type IPerformImage = {
+  alt: string;
+  title: string;
+  url: string;
+};
+
+export const performImage = (item: IPerformImage) => {
   if (!item) {
     return null;
   }
