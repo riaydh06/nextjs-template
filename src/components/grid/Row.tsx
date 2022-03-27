@@ -37,7 +37,7 @@ const Row: FC<IRow> = ({
   noGutters,
   ...props
 }) => {
-  const TagName = component;
+  const TagName: any = component;
 
   return (
     <TagName

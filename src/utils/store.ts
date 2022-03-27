@@ -19,11 +19,13 @@ export const getErrorState = (data = {}) => ({
   isError: true,
 });
 
-export const isLoading = (state = {}) => !!state.isLoading;
-export const isLoaded = (state = {}) => !!state.isLoaded;
-export const isError = (state = {}) => !!state.isError;
+export const isLoading: any = (state = { isLoading: false }) =>
+  !!state.isLoading;
+export const isLoaded: any = (state = { isLoaded: false }) => !!state.isLoaded;
+export const isError: any = (state = { isError: false }) => !!state.isError;
 
-export const getData = (state = {}, defaultValue = {}) =>
+export const getData = (state = { data: {} }, defaultValue = {}) =>
   state.data || defaultValue;
-export const hasData = (state = {}) => !!state.data;
-export const shouldLoad = (state = {}) => !state.isLoaded && !state.isLoading;
+export const hasData: any = (state = { data: {} }) => !!state.data;
+export const shouldLoad = (state = { isLoaded: false, isLoading: false }) =>
+  !state.isLoaded && !state.isLoading;

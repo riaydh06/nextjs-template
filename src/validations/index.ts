@@ -70,8 +70,8 @@ export const required_custom_trim = (errorId: string) => (value: string) => {
   return null;
 };
 
-export const validator = (values: any, config = {}) => {
-  const errors = {};
+export const validator = (values: any, config: { [key: string]: any } = {}) => {
+  let errors = {};
 
   Object.keys(config).forEach((field) => {
     let fieldError;
@@ -81,7 +81,10 @@ export const validator = (values: any, config = {}) => {
       return !!fieldError;
     });
 
-    errors[field] = fieldError;
+    errors = {
+      ...errors,
+      [field]: fieldError,
+    };
   });
 
   return errors;

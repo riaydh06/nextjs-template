@@ -1,5 +1,8 @@
 interface IImage {
-  image: string;
+  image: {
+    url: string;
+    title: string;
+  };
   className: string;
   onClick?: function;
 }

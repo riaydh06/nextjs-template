@@ -19,7 +19,7 @@ const RenderInput: FC<ITextField & WithTranslation> = (props) => {
     type,
     placeholderTId,
     placeholder,
-    input: { className, ...inputProps },
+    input: { ...inputProps },
     InputProps,
     value,
     endAdornment,
@@ -89,6 +89,13 @@ TextField.defaultProps = {
   withLabel: true,
   withHelperText: true,
   InputProps: {},
+  input: {
+    name: '',
+  },
+  meta: {
+    error: { tid: '' },
+    touched: false,
+  },
 };
 
 export default withTranslation()(TextField);

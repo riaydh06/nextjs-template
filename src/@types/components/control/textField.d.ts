@@ -8,7 +8,7 @@ interface ITextField {
   borderColor?: string;
   placeholderTId?: string;
   placeholder?: string;
-  input: {
+  input?: {
     name?: string;
     value?: string;
     onChange?: (e: any, ...args: any) => void;

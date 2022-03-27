@@ -15,12 +15,18 @@ type GetLabelProps = {
 };
 
 export const getLabelProps = ({
-  input: { name },
+  input,
   tid,
   tvalues,
   label,
   labelColor,
-}: GetLabelProps) => ({ name, tid, tvalues, label, color: labelColor });
+}: GetLabelProps) => ({
+  name: input?.name || '',
+  tid,
+  tvalues,
+  label,
+  color: labelColor,
+});
 
 type GetHelperTextProps = {
   meta?: { error?: { tid?: string }; touched?: boolean };
@@ -29,11 +35,11 @@ type GetHelperTextProps = {
 };
 
 export const getHelperTextProps = ({
-  meta: { error, touched },
+  meta,
   helpTextTId,
   helperTextValues,
 }: GetHelperTextProps) => ({
-  meta: { error, touched },
+  meta: { error: meta?.error, touched: meta?.touched },
   helpTextTId,
   helperTextValues,
 });
@@ -51,7 +57,7 @@ type GetCurrentState = {
 };
 
 export const getCurrentState = ({
-  meta: { error, touched },
+  meta,
   disableValidation,
   InputProps = {},
 }: GetCurrentState) => {
@@ -63,11 +69,11 @@ export const getCurrentState = ({
     return STATES.DISABLED;
   }
 
-  if (!touched) {
+  if (!meta?.touched) {
     return STATES.PRISTINE;
   }
 
-  if (error && touched) {
+  if (meta?.error && meta?.touched) {
     return STATES.ERROR;
   }
 

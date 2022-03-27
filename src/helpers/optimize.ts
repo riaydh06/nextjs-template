@@ -1,4 +1,4 @@
-const { lstatSync, readdirSync } = require('fs');
+import { lstatSync, readdirSync } from 'fs';
 const { resolve, join } = require('path');
 const { exec } = require('child_process');
 
