@@ -1253,13 +1253,6 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
   integrity sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==
 
-"@types/react-maskedinput@^4.0.6":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@types/react-maskedinput/-/react-maskedinput-4.0.6.tgz#cbb3a689d81b594b9d3bb2d359e86d1e628cb41b"
-  integrity sha512-rLm0t4CcCE0smsOVgZTzwT/amDDBh1sL46V+V22JIeyChibCM7Oe3TNSk66oJK0fHishDyzRg7pd+sH4sozGqg==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-redux@^7.1.20", "@types/react-redux@^7.1.23":
   version "7.1.23"
   resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.1.23.tgz#3c2bb1bcc698ae69d70735f33c5a8e95f41ac528"
@@ -1954,11 +1947,6 @@ inherits@2.0.3:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
-inputmask-core@^2.1.1:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/inputmask-core/-/inputmask-core-2.2.0.tgz#79a75f7f3a4d3312ae95fd2b55a2366a7c91dfba"
-  integrity sha1-eadffzpNMxKulf0rVaI2anyR37o=
-
 interpret@^1.0.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.4.0.tgz#665ab8bc4da27a774a40584e812e3e0fa45b1a1e"
@@ -2345,7 +2333,7 @@ prop-types-extra@^1.1.0:
     react-is "^16.3.2"
     warning "^4.0.0"
 
-prop-types@^15.5.7, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -2416,14 +2404,6 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
-
-react-maskedinput@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/react-maskedinput/-/react-maskedinput-4.0.1.tgz#e9ccfeff39c19b15ac62e4dcedc7275a3ab446df"
-  integrity sha512-wWIGtJOYmFJFJl7ojJgE2oB7MKLE3QkXtB54UoXyYtvGL3Jni51a1LKAK39U/6Gh5OR3VAgFMdiPApbFw2ALrg==
-  dependencies:
-    inputmask-core "^2.1.1"
-    prop-types "^15.5.7"
 
 react-redux@^7.2.6:
   version "7.2.6"

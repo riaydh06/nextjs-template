@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import MaskedInput from 'react-maskedinput';
+// import MaskedInput from 'react-maskedinput';
 
 const CustomInput: FC<ICustomInput> = ({ mask, multiline, ...props }) => {
-  const InputWrap: any = mask ? MaskedInput : multiline ? 'textarea' : 'input';
+  const InputWrap: any = multiline ? 'textarea' : 'input';
   const inputProps = mask
     ? {
         mask,
